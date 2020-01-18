@@ -9,21 +9,23 @@
 /* Begin PBXBuildFile section */
 		A52F2A8D23D3121200190870 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F2A8C23D3121200190870 /* AppDelegate.swift */; };
 		A52F2A8F23D3121200190870 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F2A8E23D3121200190870 /* SceneDelegate.swift */; };
-		A52F2A9123D3121200190870 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F2A9023D3121200190870 /* ViewController.swift */; };
-		A52F2A9423D3121200190870 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52F2A9223D3121200190870 /* Main.storyboard */; };
-		A52F2A9623D3121400190870 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A52F2A9523D3121400190870 /* Assets.xcassets */; };
 		A52F2A9923D3121400190870 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52F2A9723D3121400190870 /* LaunchScreen.storyboard */; };
+		A52F2AB223D31CED00190870 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F2AB123D31CED00190870 /* Logger.swift */; };
+		A52F2AB323D31D2B00190870 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F2AA923D317E700190870 /* BaseViewController.swift */; };
+		A52F2AB423D31D2B00190870 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F2AAA23D317F200190870 /* BaseViewModel.swift */; };
+		A5E0EFFB23D3290400A9CA3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5E0EFFA23D3290400A9CA3B /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		A52F2A8923D3121200190870 /* BoostersChallange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoostersChallange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52F2A8C23D3121200190870 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A52F2A8E23D3121200190870 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		A52F2A9023D3121200190870 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		A52F2A9323D3121200190870 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		A52F2A9523D3121400190870 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A52F2A9823D3121400190870 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A52F2A9A23D3121400190870 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A52F2AA923D317E700190870 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		A52F2AAA23D317F200190870 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
+		A52F2AB123D31CED00190870 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		A5E0EFFA23D3290400A9CA3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +58,104 @@
 		A52F2A8B23D3121200190870 /* BoostersChallange */ = {
 			isa = PBXGroup;
 			children = (
-				A52F2A8C23D3121200190870 /* AppDelegate.swift */,
-				A52F2A8E23D3121200190870 /* SceneDelegate.swift */,
-				A52F2A9023D3121200190870 /* ViewController.swift */,
-				A52F2A9223D3121200190870 /* Main.storyboard */,
-				A52F2A9523D3121400190870 /* Assets.xcassets */,
-				A52F2A9723D3121400190870 /* LaunchScreen.storyboard */,
-				A52F2A9A23D3121400190870 /* Info.plist */,
+				A52F2AA323D3166800190870 /* Features */,
+				A52F2AAC23D3188C00190870 /* Resources */,
+				A52F2AAB23D3183A00190870 /* Supporting Files */,
 			);
 			path = BoostersChallange;
+			sourceTree = "<group>";
+		};
+		A52F2AA323D3166800190870 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				A52F2AB523D31DCB00190870 /* LaunchScreen */,
+				A52F2AA423D3169D00190870 /* Main */,
+				A52F2AA523D316A900190870 /* Audio */,
+				A52F2AA623D3178300190870 /* Shared */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		A52F2AA423D3169D00190870 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		A52F2AA523D316A900190870 /* Audio */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Audio;
+			sourceTree = "<group>";
+		};
+		A52F2AA623D3178300190870 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				A52F2AB023D31CBE00190870 /* Logger */,
+				A52F2AA723D3179000190870 /* BaseViewController */,
+				A52F2AA823D317AD00190870 /* BaseViewModel */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		A52F2AA723D3179000190870 /* BaseViewController */ = {
+			isa = PBXGroup;
+			children = (
+				A52F2AA923D317E700190870 /* BaseViewController.swift */,
+			);
+			path = BaseViewController;
+			sourceTree = "<group>";
+		};
+		A52F2AA823D317AD00190870 /* BaseViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				A52F2AAA23D317F200190870 /* BaseViewModel.swift */,
+			);
+			path = BaseViewModel;
+			sourceTree = "<group>";
+		};
+		A52F2AAB23D3183A00190870 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				A52F2A8C23D3121200190870 /* AppDelegate.swift */,
+				A52F2A8E23D3121200190870 /* SceneDelegate.swift */,
+				A52F2A9A23D3121400190870 /* Info.plist */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A52F2AAC23D3188C00190870 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				A52F2AAD23D3189B00190870 /* Assets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		A52F2AAD23D3189B00190870 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				A5E0EFFA23D3290400A9CA3B /* Assets.xcassets */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		A52F2AB023D31CBE00190870 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				A52F2AB123D31CED00190870 /* Logger.swift */,
+			);
+			path = Logger;
+			sourceTree = "<group>";
+		};
+		A52F2AB523D31DCB00190870 /* LaunchScreen */ = {
+			isa = PBXGroup;
+			children = (
+				A52F2A9723D3121400190870 /* LaunchScreen.storyboard */,
+			);
+			path = LaunchScreen;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,9 +216,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5E0EFFB23D3290400A9CA3B /* Assets.xcassets in Resources */,
 				A52F2A9923D3121400190870 /* LaunchScreen.storyboard in Resources */,
-				A52F2A9623D3121400190870 /* Assets.xcassets in Resources */,
-				A52F2A9423D3121200190870 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +228,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A52F2A9123D3121200190870 /* ViewController.swift in Sources */,
+				A52F2AB323D31D2B00190870 /* BaseViewController.swift in Sources */,
 				A52F2A8D23D3121200190870 /* AppDelegate.swift in Sources */,
 				A52F2A8F23D3121200190870 /* SceneDelegate.swift in Sources */,
+				A52F2AB223D31CED00190870 /* Logger.swift in Sources */,
+				A52F2AB423D31D2B00190870 /* BaseViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A52F2A9223D3121200190870 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A52F2A9323D3121200190870 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A52F2A9723D3121400190870 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -285,7 +369,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = BoostersChallange/Info.plist;
+				INFOPLIST_FILE = "BoostersChallange/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -302,7 +386,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				INFOPLIST_FILE = BoostersChallange/Info.plist;
+				INFOPLIST_FILE = "BoostersChallange/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
