@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A500C70423D330150020B3BE /* AlarmViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A500C70323D330150020B3BE /* AlarmViewModel.swift */; };
+		A500C70723D331870020B3BE /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A500C70523D331870020B3BE /* AlarmViewController.swift */; };
+		A500C70823D331870020B3BE /* AlarmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A500C70623D331870020B3BE /* AlarmViewController.xib */; };
+		A500C70C23D4BC690020B3BE /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A500C70B23D4BC690020B3BE /* UIView.swift */; };
 		A52F2A8D23D3121200190870 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F2A8C23D3121200190870 /* AppDelegate.swift */; };
 		A52F2A8F23D3121200190870 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F2A8E23D3121200190870 /* SceneDelegate.swift */; };
 		A52F2A9923D3121400190870 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52F2A9723D3121400190870 /* LaunchScreen.storyboard */; };
@@ -17,6 +21,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A500C70323D330150020B3BE /* AlarmViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewModel.swift; sourceTree = "<group>"; };
+		A500C70523D331870020B3BE /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
+		A500C70623D331870020B3BE /* AlarmViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmViewController.xib; sourceTree = "<group>"; };
+		A500C70B23D4BC690020B3BE /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		A52F2A8923D3121200190870 /* BoostersChallange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoostersChallange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52F2A8C23D3121200190870 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A52F2A8E23D3121200190870 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -39,6 +47,32 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A500C70223D32FEE0020B3BE /* Alarm */ = {
+			isa = PBXGroup;
+			children = (
+				A500C70323D330150020B3BE /* AlarmViewModel.swift */,
+				A500C70523D331870020B3BE /* AlarmViewController.swift */,
+				A500C70623D331870020B3BE /* AlarmViewController.xib */,
+			);
+			path = Alarm;
+			sourceTree = "<group>";
+		};
+		A500C70923D4BC430020B3BE /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				A500C70A23D4BC4D0020B3BE /* User Interface */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		A500C70A23D4BC4D0020B3BE /* User Interface */ = {
+			isa = PBXGroup;
+			children = (
+				A500C70B23D4BC690020B3BE /* UIView.swift */,
+			);
+			path = "User Interface";
+			sourceTree = "<group>";
+		};
 		A52F2A8023D3121200190870 = {
 			isa = PBXGroup;
 			children = (
@@ -58,6 +92,7 @@
 		A52F2A8B23D3121200190870 /* BoostersChallange */ = {
 			isa = PBXGroup;
 			children = (
+				A500C70923D4BC430020B3BE /* Extensions */,
 				A52F2AA323D3166800190870 /* Features */,
 				A52F2AAC23D3188C00190870 /* Resources */,
 				A52F2AAB23D3183A00190870 /* Supporting Files */,
@@ -79,6 +114,7 @@
 		A52F2AA423D3169D00190870 /* Main */ = {
 			isa = PBXGroup;
 			children = (
+				A500C70223D32FEE0020B3BE /* Alarm */,
 			);
 			path = Main;
 			sourceTree = "<group>";
@@ -216,6 +252,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A500C70823D331870020B3BE /* AlarmViewController.xib in Resources */,
 				A5E0EFFB23D3290400A9CA3B /* Assets.xcassets in Resources */,
 				A52F2A9923D3121400190870 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -228,10 +265,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A500C70C23D4BC690020B3BE /* UIView.swift in Sources */,
 				A52F2AB323D31D2B00190870 /* BaseViewController.swift in Sources */,
 				A52F2A8D23D3121200190870 /* AppDelegate.swift in Sources */,
+				A500C70723D331870020B3BE /* AlarmViewController.swift in Sources */,
 				A52F2A8F23D3121200190870 /* SceneDelegate.swift in Sources */,
 				A52F2AB223D31CED00190870 /* Logger.swift in Sources */,
+				A500C70423D330150020B3BE /* AlarmViewModel.swift in Sources */,
 				A52F2AB423D31D2B00190870 /* BaseViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

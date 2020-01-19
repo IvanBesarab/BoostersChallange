@@ -17,7 +17,8 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let windowScene = (scene as? UIWindowScene) else { return }
        
         let window = UIWindow(frame: windowScene.coordinateSpace.bounds)
-        let alarmViewController = UIViewController()
+        let alarmViewModel = AlarmViewModel()
+        let alarmViewController = AlarmViewController(withViewModel: alarmViewModel)
         
         window.windowScene = windowScene
         
