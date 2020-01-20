@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="dark"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="AlarmViewController" customModule="BoostersChallange" customModuleProvider="target">
             <connections>
+                <outlet property="alarmTimeButton" destination="mDw-dv-cBk" id="h90-cW-fQm"/>
+                <outlet property="mainButton" destination="8yL-P0-xqS" id="PWp-H4-dc5"/>
+                <outlet property="sleepTimerButton" destination="ue4-jf-9np" id="L3k-fu-pdc"/>
+                <outlet property="stateLabel" destination="W1f-Q3-LmE" id="f4s-Or-QgI"/>
+                <outlet property="stopButton" destination="ROS-NC-hSt" id="he7-Kj-C4p"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -17,34 +23,18 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Playing" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1f-Q3-LmE">
-                    <rect key="frame" x="149.5" y="60" width="76.5" height="26.5"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Playing" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="W1f-Q3-LmE">
+                    <rect key="frame" x="30" y="60" width="315" height="26.5"/>
                     <fontDescription key="fontDescription" type="boldSystem" pointSize="22"/>
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yL-P0-xqS">
-                    <rect key="frame" x="30" y="585" width="315" height="62"/>
-                    <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="62" id="Xfw-LX-PgX"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                    <state key="normal" title="Pause">
-                        <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </state>
-                    <userDefinedRuntimeAttributes>
-                        <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
-                            <real key="value" value="8"/>
-                        </userDefinedRuntimeAttribute>
-                    </userDefinedRuntimeAttributes>
-                </button>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cDZ-mP-qCx">
-                    <rect key="frame" x="30" y="410" width="315" height="127"/>
+                    <rect key="frame" x="30" y="340" width="315" height="127"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ega-6q-wOT" userLabel="Separator">
                             <rect key="frame" x="0.0" y="0.0" width="315" height="1"/>
-                            <color key="backgroundColor" red="0.79607843140000001" green="0.79607843140000001" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="4Uy-pq-2mP"/>
                             </constraints>
@@ -70,7 +60,7 @@
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="A5v-99-qsL" userLabel="Separator">
                             <rect key="frame" x="0.0" y="63" width="315" height="1"/>
-                            <color key="backgroundColor" red="0.79607843140000001" green="0.79607843140000001" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="4Q7-Ro-C75"/>
                             </constraints>
@@ -96,24 +86,69 @@
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UF3-t2-Ay7" userLabel="Separator">
                             <rect key="frame" x="0.0" y="126" width="315" height="1"/>
-                            <color key="backgroundColor" red="0.79607843137254897" green="0.79607843137254897" blue="0.79607843137254897" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="backgroundColor" systemColor="separatorColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.28999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="6Jm-YI-TYm"/>
                             </constraints>
                         </view>
                     </subviews>
                 </stackView>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6Lu-ig-uDJ">
+                    <rect key="frame" x="30" y="515" width="315" height="132"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yL-P0-xqS">
+                            <rect key="frame" x="0.0" y="0.0" width="315" height="62"/>
+                            <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="62" id="Xfw-LX-PgX"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <state key="normal" title="Pause">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="mainButtonPressed" destination="-1" eventType="touchUpInside" id="OQW-nj-lo1"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROS-NC-hSt">
+                            <rect key="frame" x="0.0" y="70" width="315" height="62"/>
+                            <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="62" id="iSH-tF-w5s"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <state key="normal" title="Stop">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="stopButtonPressed" destination="-1" eventType="touchUpInside" id="EpL-c2-NfD"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
             <constraints>
-                <constraint firstItem="cDZ-mP-qCx" firstAttribute="width" secondItem="8yL-P0-xqS" secondAttribute="width" id="VNl-aE-jQM"/>
+                <constraint firstItem="6Lu-ig-uDJ" firstAttribute="leading" secondItem="W1f-Q3-LmE" secondAttribute="leading" id="6O2-HJ-gGK"/>
+                <constraint firstItem="W1f-Q3-LmE" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="95b-qU-tMI"/>
+                <constraint firstItem="6Lu-ig-uDJ" firstAttribute="top" secondItem="cDZ-mP-qCx" secondAttribute="bottom" constant="48" id="HgE-lJ-O4C"/>
+                <constraint firstItem="cDZ-mP-qCx" firstAttribute="leading" secondItem="6Lu-ig-uDJ" secondAttribute="leading" id="MDB-fR-THz"/>
                 <constraint firstItem="W1f-Q3-LmE" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="VkR-bp-kca"/>
-                <constraint firstItem="8yL-P0-xqS" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="bh6-Dj-o3h"/>
+                <constraint firstItem="6Lu-ig-uDJ" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cFG-YR-dkV"/>
                 <constraint firstItem="W1f-Q3-LmE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="60" id="fLT-EH-5rC"/>
-                <constraint firstItem="8yL-P0-xqS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="fTE-rf-M53"/>
+                <constraint firstItem="W1f-Q3-LmE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="hCy-c6-zvu"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="6Lu-ig-uDJ" secondAttribute="bottom" constant="20" id="icN-1W-y8e"/>
                 <constraint firstItem="cDZ-mP-qCx" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="pZR-eD-XyS"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="8yL-P0-xqS" secondAttribute="bottom" constant="20" id="wrQ-Zk-tHQ"/>
-                <constraint firstItem="8yL-P0-xqS" firstAttribute="top" secondItem="cDZ-mP-qCx" secondAttribute="bottom" constant="48" id="zSU-1y-Mge"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="138.40000000000001" y="133.5832083958021"/>

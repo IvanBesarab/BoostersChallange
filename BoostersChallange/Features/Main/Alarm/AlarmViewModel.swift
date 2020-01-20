@@ -6,55 +6,123 @@
 //  Copyright © 2020 Ivan Besarab. All rights reserved.
 //
 
-import Foundation
+import AVFoundation
+
+protocol AudioDevice {
+    static func create(fileName: String) -> AudioDevice
+    func start()
+    func pause()
+    func `continue`()
+    func stop()
+}
+
+protocol AlarmStateDelegate: class {
+    func didChangeState(to state: AlarmState)
+}
 
 final class AlarmViewModel: BaseViewModel {
-//    let items = BehaviorRelay<[[ActivityRenderable]]>(value: [])
-//    var headers = [Localizable.pendingActivityListTitle, Localizable.last30daysActivityListTitle]
-
-    // MARK: - Variables
-
-//    private weak var connector: ActivityListConnectable?
-
-    // MARK: - Constants
-
-//    private let userDataSource: UserDataSource
-
-    // MARK: - VM's life cycle
-
-//    init(connector: ActivityListConnectable?, userDataSource: UserDataSource) {
-//        self.connector = connector
-//        self.userDataSource = userDataSource
-//    }
-
-    // MARK: - Main
-
-//    override func viewDidLoad() {
-//        super.viewDidLoad()
-//        userDataSource.getActivity().subscribe(onSuccess: { items in
-//            if let realItems = items {
-//                var result = [[ActivityRenderable]]()
-//                var headersResult = [String]()
-//                let pendingItems = realItems.filter { $0.status == .inProgress }
-//                if pendingItems.count > 0 {
-//                    headersResult.append(Localizable.pendingActivityListTitle)
-//                    result.append(pendingItems)
-//                }
-//
-//                let nonPendingItems = realItems.filter { $0.status != .inProgress }
-//                if nonPendingItems.count > 0 {
-//                    headersResult.append(Localizable.last30daysActivityListTitle)
-//                    result.append(nonPendingItems)
-//                }
-//                self.items.accept(result)
-//            }
-//        }, onError: { error in
-//            self.connector?.presentErrorMessageAlert(error: error)
-//        })
-//            .disposed(by: disposeBag)
-//    }
-//
-//    func presentItem(index: IndexPath) {
-//        connector?.presentDetailActivity(activityItem: items.value[index.section][index.row])
-//    }
+    
+    private (set) var state: AlarmState = .idle {
+        didSet {
+            delegate?.didChangeState(to: state)
+        }
+    }
+    
+    weak var delegate: AlarmStateDelegate?
+    private var device: AudioDevice!
+    var timer: Timer!
+    var playedInterval: TimeInterval = 0
+    var playInterval: TimeInterval = 4
+    var alarmFireDate: Date = Date().addingTimeInterval(8)
+    
+    override func viewDidLoad() {
+        setupInitialState()
+    }
+    
+    private func setupInitialState() {
+        timer?.invalidate()
+        device?.stop()
+        state = .idle
+        playedInterval = 0
+        alarmFireDate = Date().addingTimeInterval(8)
+        device = AVAudioPlayer.create(fileName: "nature.m4a")
+    }
+    
+    private func switchToRecord() {
+        device.stop()
+        state = AVAudioSession.sharedInstance().recordPermission == .granted ? .recording : .notRecording
+        guard AVAudioSession.sharedInstance().recordPermission == .granted else {
+            return
+        }
+        device = AVAudioRecorder.create(fileName: Date().description)
+        device.start()
+    }
+    
+    private func checkPermission() {
+        switch AVAudioSession.sharedInstance().recordPermission {
+        case .undetermined:
+            requestRecordPermission()
+        case .denied:
+            state = .notRecording
+        case .granted:
+            switchToRecord()
+        default:
+            break
+        }
+        
+    }
+    
+    private func requestRecordPermission() {
+        AVAudioSession.sharedInstance().requestRecordPermission() { [unowned self] allowed in
+            DispatchQueue.main.async {
+                self.checkPermission()
+            }
+        }
+    }
+    
+    @objc func timerTicked(timer: Timer) {
+        switch state {
+        case .playing:
+            if playedInterval < playInterval {
+                playedInterval += timer.timeInterval
+            }
+            else {
+                switchToRecord()
+            }
+        case .recording, .notRecording:
+            if alarmFireDate.timeIntervalSinceNow < 0 {
+                device.stop()
+                state = .alarm
+                device = AVAudioPlayer.create(fileName: "alarm.m4a")
+                device.start()
+            }
+        default:
+            break
+        }
+    }
+    
+    func actionPressed() {
+        switch state {
+        case .idle:
+            setupInitialState() // temporary here until controlls added
+            timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(timerTicked(timer:)), userInfo: nil, repeats: true)
+            device.start()
+            state = .playing
+        case .playing, .recording:
+            device.pause()
+            state = .paused
+        case .alarm:
+            state = .idle
+        case .paused:
+            device.continue()
+            state = .playing
+        case .waitingForRecordPermission, .notRecording:
+            break
+        }
+    }
+    
+    func stopPressed() {
+        setupInitialState()
+    }
+    
 }

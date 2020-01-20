@@ -11,12 +11,18 @@
 		A500C70723D331870020B3BE /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A500C70523D331870020B3BE /* AlarmViewController.swift */; };
 		A500C70823D331870020B3BE /* AlarmViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A500C70623D331870020B3BE /* AlarmViewController.xib */; };
 		A500C70C23D4BC690020B3BE /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A500C70B23D4BC690020B3BE /* UIView.swift */; };
+		A500C70F23D4C69E0020B3BE /* Localizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = A500C70E23D4C69E0020B3BE /* Localizable.swift */; };
+		A500C71523D587AC0020B3BE /* AVAudioPlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A500C71423D587AC0020B3BE /* AVAudioPlayer.swift */; };
+		A500C71723D587BC0020B3BE /* AVAudioRecorder.swift in Sources */ = {isa = PBXBuildFile; fileRef = A500C71623D587BC0020B3BE /* AVAudioRecorder.swift */; };
+		A500C71B23D592D60020B3BE /* AlarmState.swift in Sources */ = {isa = PBXBuildFile; fileRef = A500C71A23D592D60020B3BE /* AlarmState.swift */; };
 		A52F2A8D23D3121200190870 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F2A8C23D3121200190870 /* AppDelegate.swift */; };
 		A52F2A8F23D3121200190870 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F2A8E23D3121200190870 /* SceneDelegate.swift */; };
 		A52F2A9923D3121400190870 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A52F2A9723D3121400190870 /* LaunchScreen.storyboard */; };
 		A52F2AB223D31CED00190870 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F2AB123D31CED00190870 /* Logger.swift */; };
 		A52F2AB323D31D2B00190870 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F2AA923D317E700190870 /* BaseViewController.swift */; };
 		A52F2AB423D31D2B00190870 /* BaseViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A52F2AAA23D317F200190870 /* BaseViewModel.swift */; };
+		A593FC5E23D5C56000EACCEF /* nature.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A593FC5C23D5C56000EACCEF /* nature.m4a */; };
+		A593FC5F23D5C56000EACCEF /* alarm.m4a in Resources */ = {isa = PBXBuildFile; fileRef = A593FC5D23D5C56000EACCEF /* alarm.m4a */; };
 		A5E0EFFB23D3290400A9CA3B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A5E0EFFA23D3290400A9CA3B /* Assets.xcassets */; };
 /* End PBXBuildFile section */
 
@@ -25,6 +31,10 @@
 		A500C70523D331870020B3BE /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		A500C70623D331870020B3BE /* AlarmViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmViewController.xib; sourceTree = "<group>"; };
 		A500C70B23D4BC690020B3BE /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
+		A500C70E23D4C69E0020B3BE /* Localizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Localizable.swift; sourceTree = "<group>"; };
+		A500C71423D587AC0020B3BE /* AVAudioPlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAudioPlayer.swift; sourceTree = "<group>"; };
+		A500C71623D587BC0020B3BE /* AVAudioRecorder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AVAudioRecorder.swift; sourceTree = "<group>"; };
+		A500C71A23D592D60020B3BE /* AlarmState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmState.swift; sourceTree = "<group>"; };
 		A52F2A8923D3121200190870 /* BoostersChallange.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoostersChallange.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A52F2A8C23D3121200190870 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A52F2A8E23D3121200190870 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -33,6 +43,8 @@
 		A52F2AA923D317E700190870 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		A52F2AAA23D317F200190870 /* BaseViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewModel.swift; sourceTree = "<group>"; };
 		A52F2AB123D31CED00190870 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		A593FC5C23D5C56000EACCEF /* nature.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = nature.m4a; sourceTree = "<group>"; };
+		A593FC5D23D5C56000EACCEF /* alarm.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = alarm.m4a; sourceTree = "<group>"; };
 		A5E0EFFA23D3290400A9CA3B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +72,7 @@
 		A500C70923D4BC430020B3BE /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				A500C71323D587750020B3BE /* AVMedia */,
 				A500C70A23D4BC4D0020B3BE /* User Interface */,
 			);
 			path = Extensions;
@@ -71,6 +84,48 @@
 				A500C70B23D4BC690020B3BE /* UIView.swift */,
 			);
 			path = "User Interface";
+			sourceTree = "<group>";
+		};
+		A500C70D23D4C6790020B3BE /* Localizable */ = {
+			isa = PBXGroup;
+			children = (
+				A500C70E23D4C69E0020B3BE /* Localizable.swift */,
+			);
+			path = Localizable;
+			sourceTree = "<group>";
+		};
+		A500C71023D4EE7A0020B3BE /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				A593FC5D23D5C56000EACCEF /* alarm.m4a */,
+				A593FC5C23D5C56000EACCEF /* nature.m4a */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		A500C71323D587750020B3BE /* AVMedia */ = {
+			isa = PBXGroup;
+			children = (
+				A500C71423D587AC0020B3BE /* AVAudioPlayer.swift */,
+				A500C71623D587BC0020B3BE /* AVAudioRecorder.swift */,
+			);
+			path = AVMedia;
+			sourceTree = "<group>";
+		};
+		A500C71823D591890020B3BE /* Entities */ = {
+			isa = PBXGroup;
+			children = (
+				A500C71923D591920020B3BE /* Local */,
+			);
+			path = Entities;
+			sourceTree = "<group>";
+		};
+		A500C71923D591920020B3BE /* Local */ = {
+			isa = PBXGroup;
+			children = (
+				A500C71A23D592D60020B3BE /* AlarmState.swift */,
+			);
+			path = Local;
 			sourceTree = "<group>";
 		};
 		A52F2A8023D3121200190870 = {
@@ -92,6 +147,7 @@
 		A52F2A8B23D3121200190870 /* BoostersChallange */ = {
 			isa = PBXGroup;
 			children = (
+				A500C71823D591890020B3BE /* Entities */,
 				A500C70923D4BC430020B3BE /* Extensions */,
 				A52F2AA323D3166800190870 /* Features */,
 				A52F2AAC23D3188C00190870 /* Resources */,
@@ -165,6 +221,8 @@
 		A52F2AAC23D3188C00190870 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A500C71023D4EE7A0020B3BE /* Sound */,
+				A500C70D23D4C6790020B3BE /* Localizable */,
 				A52F2AAD23D3189B00190870 /* Assets */,
 			);
 			path = Resources;
@@ -252,7 +310,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A593FC5E23D5C56000EACCEF /* nature.m4a in Resources */,
 				A500C70823D331870020B3BE /* AlarmViewController.xib in Resources */,
+				A593FC5F23D5C56000EACCEF /* alarm.m4a in Resources */,
 				A5E0EFFB23D3290400A9CA3B /* Assets.xcassets in Resources */,
 				A52F2A9923D3121400190870 /* LaunchScreen.storyboard in Resources */,
 			);
@@ -267,11 +327,15 @@
 			files = (
 				A500C70C23D4BC690020B3BE /* UIView.swift in Sources */,
 				A52F2AB323D31D2B00190870 /* BaseViewController.swift in Sources */,
+				A500C71523D587AC0020B3BE /* AVAudioPlayer.swift in Sources */,
 				A52F2A8D23D3121200190870 /* AppDelegate.swift in Sources */,
 				A500C70723D331870020B3BE /* AlarmViewController.swift in Sources */,
+				A500C71B23D592D60020B3BE /* AlarmState.swift in Sources */,
 				A52F2A8F23D3121200190870 /* SceneDelegate.swift in Sources */,
 				A52F2AB223D31CED00190870 /* Logger.swift in Sources */,
 				A500C70423D330150020B3BE /* AlarmViewModel.swift in Sources */,
+				A500C70F23D4C69E0020B3BE /* Localizable.swift in Sources */,
+				A500C71723D587BC0020B3BE /* AVAudioRecorder.swift in Sources */,
 				A52F2AB423D31D2B00190870 /* BaseViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -409,6 +473,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q552XM5CS3;
 				INFOPLIST_FILE = "BoostersChallange/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -426,6 +491,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = Q552XM5CS3;
 				INFOPLIST_FILE = "BoostersChallange/Supporting Files/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
