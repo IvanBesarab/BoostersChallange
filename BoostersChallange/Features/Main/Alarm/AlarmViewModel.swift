@@ -30,10 +30,12 @@ final class AlarmViewModel: BaseViewModel {
     
     weak var delegate: AlarmStateDelegate?
     private var device: AudioDevice!
-    var timer: Timer!
-    var playedInterval: TimeInterval = 0
-    var playInterval: TimeInterval = 4
-    var alarmFireDate: Date = Date().addingTimeInterval(8)
+    private var alarmFireDate: Date = Date()
+    private var timer: Timer!
+    private var playedInterval: TimeInterval = 0
+    
+    var playInterval: TimeInterval = 0
+    var alarmDateOffset: TimeInterval = 0
     
     override func viewDidLoad() {
         setupInitialState()
@@ -44,7 +46,7 @@ final class AlarmViewModel: BaseViewModel {
         device?.stop()
         state = .idle
         playedInterval = 0
-        alarmFireDate = Date().addingTimeInterval(8)
+        alarmFireDate = Date().addingTimeInterval(alarmDateOffset + playInterval) 
         device = AVAudioPlayer.create(fileName: "nature.m4a")
     }
     

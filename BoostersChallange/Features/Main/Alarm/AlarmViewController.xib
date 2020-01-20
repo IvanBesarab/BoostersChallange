@@ -55,6 +55,9 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                     <state key="normal" title="20 min"/>
+                                    <connections>
+                                        <action selector="timerAlarmPressed:" destination="-1" eventType="touchUpInside" id="nZl-TU-b0d"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
@@ -81,6 +84,9 @@
                                     </constraints>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
                                     <state key="normal" title="08:30 am"/>
+                                    <connections>
+                                        <action selector="timerAlarmPressed:" destination="-1" eventType="touchUpInside" id="bSU-Qf-bc3"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
