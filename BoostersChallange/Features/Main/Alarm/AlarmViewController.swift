@@ -14,7 +14,7 @@ extension Localizable {
     static let offAlertButtonTitle = NSLocalizedString("off", comment: "off Alert Button Title")
     static let cancelAlertButtonTitle = NSLocalizedString("Cancel", comment: "Cancel")
     static let sleepTimerAlertTitle = NSLocalizedString("Sleep Timer", comment: "sleepTimerAlertTitle")
-    static let alarmTimerAlertTitle = NSLocalizedString("Alarm", comment: "Alarm Alert Title")
+    static let alarmTimerAlertTitle = NSLocalizedString("Alarm offset timer", comment: "Alarm Alert Title")
 }
 
 class AlarmViewController: BaseViewController<AlarmViewModel>, AlarmStateDelegate {
@@ -22,8 +22,9 @@ class AlarmViewController: BaseViewController<AlarmViewModel>, AlarmStateDelegat
     @IBOutlet private weak var stateLabel: UILabel!
     @IBOutlet private weak var mainButton: UIButton!
     @IBOutlet private weak var stopButton: UIButton!
-    @IBOutlet  private weak var sleepTimerButton: UIButton!
+    @IBOutlet private weak var sleepTimerButton: UIButton!
     @IBOutlet private weak var alarmTimeButton: UIButton!
+    @IBOutlet private weak var muteButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,6 +46,7 @@ class AlarmViewController: BaseViewController<AlarmViewModel>, AlarmStateDelegat
     
     func didChangeState(to state: AlarmState) {
         stateLabel.text = state.name
+        updateMuteButton()
     }
     
     @IBAction func mainButtonPressed() {
@@ -81,4 +83,12 @@ class AlarmViewController: BaseViewController<AlarmViewModel>, AlarmStateDelegat
         present(alert, animated: true, completion: nil)
     }
     
+    @IBAction func muteButtonPressed(_ sender: UIButton) {
+        viewModel.isMuted = !viewModel.isMuted
+        updateMuteButton()
+    }
+    
+    private func updateMuteButton() {
+        muteButton.setTitle(viewModel.isMuted ? "Unmute" : "Mute", for: .normal)
+    }
 }

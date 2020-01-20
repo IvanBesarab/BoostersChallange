@@ -9,6 +9,16 @@
 import AVFoundation
 
 extension AVAudioRecorder: AudioDevice {
+    
+    var isMuted: Bool {
+        get {
+            false
+        }
+        set {
+            
+        }
+    }
+    
     func start() {
         record()
     }
@@ -24,6 +34,9 @@ extension AVAudioRecorder: AudioDevice {
         }
         let recordPathURL = documentsPathURL.appendingPathComponent(fileName)
         do {
+            let recordingSession = AVAudioSession.sharedInstance()
+            try recordingSession.setCategory(.record, mode: .default, policy: .default, options: .duckOthers)
+            try recordingSession.setActive(true, options: [.notifyOthersOnDeactivation])
             let settings = [
                 AVFormatIDKey: Int(kAudioFormatMPEG4AAC),
                 AVSampleRateKey: 12000,
@@ -34,6 +47,7 @@ extension AVAudioRecorder: AudioDevice {
             return recorder
         }
         catch {
+            print(error.localizedDescription)
             fatalError(error.localizedDescription)
         }
     }

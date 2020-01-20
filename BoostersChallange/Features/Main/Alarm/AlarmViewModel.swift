@@ -14,6 +14,7 @@ protocol AudioDevice {
     func pause()
     func `continue`()
     func stop()
+    var isMuted: Bool {get set}
 }
 
 protocol AlarmStateDelegate: class {
@@ -33,11 +34,19 @@ final class AlarmViewModel: BaseViewModel {
     private var alarmFireDate: Date = Date()
     private var timer: Timer!
     private var playedInterval: TimeInterval = 0
-    
-    var playInterval: TimeInterval = 0
-    var alarmDateOffset: TimeInterval = 0
+    var isMuted: Bool {
+        get {
+            return device?.isMuted ?? false
+        }
+        set {
+            device?.isMuted = newValue
+        }
+    }
+    var playInterval: TimeInterval = 20
+    var alarmDateOffset: TimeInterval = 20
     
     override func viewDidLoad() {
+        checkPermission()
         setupInitialState()
     }
     
@@ -51,7 +60,7 @@ final class AlarmViewModel: BaseViewModel {
     }
     
     private func switchToRecord() {
-        device.stop()
+        device?.stop()
         state = AVAudioSession.sharedInstance().recordPermission == .granted ? .recording : .notRecording
         guard AVAudioSession.sharedInstance().recordPermission == .granted else {
             return
@@ -64,10 +73,6 @@ final class AlarmViewModel: BaseViewModel {
         switch AVAudioSession.sharedInstance().recordPermission {
         case .undetermined:
             requestRecordPermission()
-        case .denied:
-            state = .notRecording
-        case .granted:
-            switchToRecord()
         default:
             break
         }
@@ -91,8 +96,8 @@ final class AlarmViewModel: BaseViewModel {
             else {
                 switchToRecord()
             }
-        case .recording, .notRecording:
-            if alarmFireDate.timeIntervalSinceNow < 0 {
+        case .recording, .notRecording, .paused:
+            if alarmFireDate.timeIntervalSinceNow < 0 && playedInterval >= playInterval {
                 device.stop()
                 state = .alarm
                 device = AVAudioPlayer.create(fileName: "alarm.m4a")

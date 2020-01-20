@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="alarmTimeButton" destination="mDw-dv-cBk" id="h90-cW-fQm"/>
                 <outlet property="mainButton" destination="8yL-P0-xqS" id="PWp-H4-dc5"/>
+                <outlet property="muteButton" destination="4eR-GJ-KTd" id="5YF-7g-xpl"/>
                 <outlet property="sleepTimerButton" destination="ue4-jf-9np" id="L3k-fu-pdc"/>
                 <outlet property="stateLabel" destination="W1f-Q3-LmE" id="f4s-Or-QgI"/>
                 <outlet property="stopButton" destination="ROS-NC-hSt" id="he7-Kj-C4p"/>
@@ -30,7 +31,7 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="cDZ-mP-qCx">
-                    <rect key="frame" x="30" y="340" width="315" height="127"/>
+                    <rect key="frame" x="30" y="270" width="315" height="127"/>
                     <subviews>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ega-6q-wOT" userLabel="Separator">
                             <rect key="frame" x="0.0" y="0.0" width="315" height="1"/>
@@ -83,7 +84,7 @@
                                         <constraint firstAttribute="height" constant="62" id="Usq-6G-06e"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
-                                    <state key="normal" title="08:30 am"/>
+                                    <state key="normal" title="+20 sec"/>
                                     <connections>
                                         <action selector="timerAlarmPressed:" destination="-1" eventType="touchUpInside" id="bSU-Qf-bc3"/>
                                     </connections>
@@ -100,10 +101,29 @@
                     </subviews>
                 </stackView>
                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="6Lu-ig-uDJ">
-                    <rect key="frame" x="30" y="515" width="315" height="132"/>
+                    <rect key="frame" x="30" y="445" width="315" height="202"/>
                     <subviews>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yL-P0-xqS">
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4eR-GJ-KTd" userLabel="MUTE">
                             <rect key="frame" x="0.0" y="0.0" width="315" height="62"/>
+                            <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="62" id="1Bx-Lo-hYV"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                            <state key="normal" title="Mute">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <real key="value" value="8"/>
+                                </userDefinedRuntimeAttribute>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="muteButtonPressed:" destination="-1" eventType="touchUpInside" id="pEQ-md-ERx"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8yL-P0-xqS">
+                            <rect key="frame" x="0.0" y="70" width="315" height="62"/>
                             <color key="backgroundColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="62" id="Xfw-LX-PgX"/>
@@ -122,7 +142,7 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ROS-NC-hSt">
-                            <rect key="frame" x="0.0" y="70" width="315" height="62"/>
+                            <rect key="frame" x="0.0" y="140" width="315" height="62"/>
                             <color key="backgroundColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="62" id="iSH-tF-w5s"/>

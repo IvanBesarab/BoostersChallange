@@ -9,6 +9,16 @@
 import AVFoundation
 
 extension AVAudioPlayer: AudioDevice {
+    
+    var isMuted: Bool {
+        get {
+            return self.volume <= 0
+        }
+        set {
+            volume = newValue ? 0 : 1
+        }
+    }
+    
     func start() {
         play()
     }
@@ -28,7 +38,6 @@ extension AVAudioPlayer: AudioDevice {
         do {
             let recordingSession = AVAudioSession.sharedInstance()
             try recordingSession.setCategory(.playAndRecord, mode: .default)
-            
             try recordingSession.setActive(true)
             
             let player = try AVAudioPlayer(contentsOf: fileURL)
